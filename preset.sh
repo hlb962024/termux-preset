@@ -28,6 +28,7 @@ echo -e "${YELLOW}[1/9] 更换清华源并更新系统...${NC}"
 cp $PREFIX/etc/apt/sources.list $PREFIX/etc/apt/sources.list.bak.$(date +%Y%m%d)
 echo "deb https://mirrors.tuna.tsinghua.edu.cn/termux/apt/termux-main stable main" > $PREFIX/etc/apt/sources.list
 apt update
+pkg update
 apt upgrade -y
 pkg update 
 pkg upgrade -y
@@ -68,7 +69,7 @@ fi
 # 步骤 5：安装其余软件包（git 已装，可重复安装无妨）
 # ------------------------------------------------------------
 echo -e "${YELLOW}[5/9] 安装其余软件包...${NC}"
-pkg install -y openssh termux-services fish starship busybox python python-pip android-tools traceroute wget
+pkg install -y openssh termux-services fish starship busybox python python-pip android-tools traceroute wget fastfetch
 # git 已装，此处不再重复，若想确保可加 git
 echo -e "${GREEN}软件包安装完成。${NC}"
 
